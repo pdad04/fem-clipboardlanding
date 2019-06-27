@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link href="https://fonts.googleapis.com/css?family=Bai+Jamjuree&display=swap" rel="stylesheet">
+  
+  <title>Frontend Mentor | Clipboard landing page</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+
+    body{
+      margin: 0;
+      font-family: 'Bai Jamjuree', sans-serif;
+      box-sizing: border-box;
+    }
+
+    section {
+      margin-bottom: 150px;
+    }
+
+    p {
+      font-size: 18px;
+      color: gray;
+      text-align: center;
+    }
+    img {
+      max-width: 100%;
+    }
+    .main-header-text {
+      color: rgba(0,0,0,0.6);
+      font-size: 42px;
+    }
+
+    .header-text {
+      color: rgba(0,0,0,0.6);
+      font-size: 38px;
+      text-align: center;
+    }
+
+    #logo {
+      margin-top: 100px;
+    }
+
+    .container {
+      width: 1440px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(5,1fr);
+    }
+    
+    .main-header {
+      background-image: url("./images/bg-header-desktop.png");
+      background-repeat: no-repeat;
+      grid-column: 1 / -1;
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .header{
+      grid-column: 2 / 5;
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .content-left-img {
+      grid-column: 1 / 4;
+    }
+
+    .content-right-text {
+      grid-column: 4 / -1;
+      align-items: center;
+      margin-top: 50px;
+    }
+
+    .content-right-text p {
+      text-align: left;
+    }
+
+    .points {
+      margin-top: 50px;
+    }
+
+    .points-header {
+      color: rgba(0,0,0,0.7);
+    }
+
+    .snippets {
+      grid-column: 1 / -1;
+      display: flex;
+      grid-column-gap: 50px;
+    }
+
+    .snippet-comp-logos{
+      grid-column: 1 / 1;
+      grid-column-gap: 50px;
+    }
+
+    .snippet-info {
+      text-align: center;
+    }
+
+    .downloads {
+      margin-top: 20px;
+      display: flex;
+    }
+
+    .iOS {
+      background-color: hsl(171, 66%, 44%);
+      box-shadow: 0 3px 0 hsl(171, 66%, 44%);
+    }
+
+    .mac {
+      background-color: hsl(233, 100%, 69%);
+      box-shadow: 0 3px 0 hsl(233, 100%, 69%);
+    }
+
+    .download-button {
+      border-radius: 25px;
+      color: white;
+      padding: 10px 20px;
+      margin: 10px;
+    }
+
+    footer {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      align-items: center;
+      height: 150px;
+      width: 100%;
+      background-color: rgba(128, 128, 128,0.3);
+    }
+
+    footer img {
+      place-self: center;
+      height: 40%;
+      width: 40%;
+    }
+
+    footer a:link {
+      text-decoration: none;
+      font-size: 18px;
+      color: gray;
+      margin-bottom: 10px;
+      
+    }
+
+    .footer-links {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .footer-social{
+        display: flex;
+        flex-direction: row;
+    }
+
+    .social-links {
+      width: 25px;
+      height: 25px;
+      margin: 15px;
+    }
+
+    @media screen and (max-width: 414px){
+      .container {
+        width: 375px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .main-header-text{
+        text-align: center;
+      }
+
+      .downloads {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .content-right-text{
+        text-align: center;
+      }
+
+      .content-right-text p {
+        text-align: center;
+      }
+
+      .snippets{
+        display: flex;
+        flex-direction: column;
+      }
+
+      .snippet-info {
+        margin-top: 75px;
+        
+      }
+
+      footer {
+        height: auto;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        padding-top: 50px;
+      }
+
+      .footer-links {
+        margin-top: 30px;
+      }
+
+      .footer-social {
+        flex-direction: column;
+        align-items: center;
+        grid-column: 1 / span 5;
+      }
+
+      footer img {
+        width: 20%;
+        height: 20%;
+      }
+
+    }
+  </style>
+</head>
+<body>
+  <section class="container">
+    <section class="main-header">
+      <div id="logo">
+       <img src="./images/logo.svg" alt="">
+      </div>
+       <div>
+        <h2 class="main-header-text">
+          A history of everything you copy
+        </h2>
+      </div>
+      <div>
+        <p>
+          Clipboard allows you to track and organize everything you 
+          copy. Instantly<br>access your clipboard on all your devices.
+        </p>
+      </div>
+      <div class="downloads">
+        <div class="download-button iOS">
+            Download for iOS
+        </div>
+        <div class="download-button mac">
+            Download for Mac
+        </div> 
+      </div>
+    </section>
+    <section class="header">
+      <div>
+        <h2 class="header-text">
+          Keep track of your snippets
+        </h2>
+        <div>
+          <p>
+            Clipboard instantly stores any item you copy in the cloud, 
+            meaning you can access<br> your snippets immediately on all your 
+            devices. Our Mac and iOS apps will help you<br> organize everything.
+          </p>
+        </div>
+      </div>
+      <div>
+    </section>
+    <section class="content-left-img">
+      <div>
+        <img src="./images/image-computer.jpg" alt="">
+      </div>
+    </section>
+    <section class="content-right-text">
+      <div class="points">
+        <h2 class="points-header">
+          Quick Search
+        </h2>
+        <p>
+          Easily search your snippets by content, category, web address, application, and more.
+        </p>
+      </div>
+      <div class="points">
+        <h2 class="points-header">
+          iCloud Sync
+        </h2>
+        <p>
+          Instantly saves and syncs snippets across all your devices.
+        </p>
+      </div>
+      <div class="points">
+        <h2 class="points-header">
+          Complete History
+        </h2>
+        <p>
+          Retrieve any snippets from the first moment you started using the app.
+        </p>
+      </div>
+    </section>
+    <section class="header">
+      <div>
+        <h2 class="header-text">
+          Access Clipboard anywhere
+        </h2>
+      </div>
+      <p>
+        Whether you’re on the go, or at your computer, you can access all your Clipboard<br>
+        snippets in a few simple clicks.
+      </p>
+      <div>
+        <img src="./images/image-devices.jpg" alt="">
+      </div>
+    </section>
+    <section class="header">
+      <h2 class="header-text">
+        Supercharge your workflow
+      </h2>
+      <p>
+        We’ve got the tools to boost your productivity.
+      </p>
+    </section>
+    <section class="snippets">
+      <div class="snippet-info">
+        <img src="./images/icon-blacklist.svg" alt="blacklist icon">
+      	<h2>
+          Create blacklists
+        </h2>
+      	<p>
+          Ensure sensitive information never makes its way to your clipboard by excluding certain sources.
+        </p>
+      </div>
+      <div class="snippet-info">
+        <img src="./images/icon-text.svg" alt="text icon">
+        <h2>
+          Plain text snippets
+        </h2>
+        <p>
+          Remove unwanted formatting from copied text for a consistent look.
+        </p>
+      </div>
+      <div class="snippet-info">
+        <img src="./images/icon-preview.svg" alt="">
+        <h2>
+          Sneak preview
+        </h2>
+        <p>
+          Quick preview of all snippets on your Clipboard for easy access.
+        </p>
+      </div>
+    </section>
+    <section>
+      <div class="snippet-info">
+        <img src="./images/logo-google.png" alt="">
+      </div>
+    </section>
+    <section>
+      <div class="snippet-info">
+          <img src="./images/logo-ibm.png" alt="">
+      </div>
+    </section>
+    <section>
+      <div class="snippet-info">
+          <img src="./images/logo-microsoft.png" alt="">
+      </div>
+    </section>
+    <section>
+      <div class="snippet-info">
+          <img src="./images/logo-hp.png" alt="">
+      </div>
+    </section>
+    <section>
+      <div class="snippet-info">
+          <img src="./images/logo-vector-graphics.png" alt="">
+      </div>
+    </section>
+    <section class="header">
+      <h1 class="main-header-text">
+        Clipboard for iOS and Mac OS
+      </h1>
+  
+      <p>
+        Available for free on the App Store. Download for Mac or iOS, sync with iCloud 
+        and you’re ready to start adding to your clipboard.
+      </p>
+  
+      <section class="downloads">
+        <div class="download-button iOS">
+          Download for iOS
+        </div>
+        <div class="download-button mac">
+          Download for Mac
+        </div>
+      </section>
+    </section>
+  </section>
+  <footer>
+    <img src="./images/logo.svg" alt="">
+    <div class="footer-links" id="faqs">
+      <a href="#">FAQs</a>
+      <a href="#">Contact Us</a>
+    </div>
+    <div class="footer-links" id="privacy">
+      <a href="#">Privacy Policy</a>
+      <a href="#">Press Kit</a>
+    </div>
+    <div class="footer-links" id="install">
+      <a href="#">Install Guide</a>
+    </div>
+    <div class="footer-social">
+      <div><a href="https://www.facebook.com"><img src="./images/_ionicons_svg_logo-facebook.svg" alt="facebook icon" class="social-links"></a></div>
+      <div><a href="https://www.twitter.com"><img src="./images/_ionicons_svg_logo-twitter.svg" alt="twitter icon" class="social-links"></a></div>
+      <div><a href="https://www.instagram.com"><img src="./images/_ionicons_svg_logo-instagram.svg" alt="instagram icon" class="social-links"></a></div>
+    </div>
+  </footer>
+</body>
+</html>
